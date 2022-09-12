@@ -4,6 +4,7 @@ import {
   CopyContent,
   CopyImage,
   CopyText,
+  FaqSection,
   InfoSection,
   InfoText,
   InitialCopy,
@@ -18,6 +19,7 @@ import BenefitItem from "./components/BenefitItem";
 import BitcoinPane from "../../assets/bitcoin-pane.png";
 import SurprisePane from "../../assets/surprise-pane.png";
 import VerifyPane from "../../assets/verify-pane.png";
+import Footer from "./components/Footer";
 
 export default function LandingPage() {
   return (
@@ -41,7 +43,7 @@ export default function LandingPage() {
           </CopyImage>
         </CopyContent>
       </InitialCopy>
-      <BenefitsSection>
+      <BenefitsSection id="benefits-section">
         <h2>Vantagens</h2>
         <BenefitItem
           title="Fácil e sem cripto"
@@ -63,7 +65,7 @@ export default function LandingPage() {
           imageAlt="Imagem de uma moça olhando para linhas de código com uma lupa."
         />
       </BenefitsSection>
-      <InfoSection>
+      <InfoSection id="info-section">
         <InfoText>
           <h2>Como funciona?</h2>
           <ul>
@@ -78,7 +80,7 @@ export default function LandingPage() {
           </ul>
         </InfoText>
       </InfoSection>
-      <TeamSection>
+      <TeamSection id="team-section">
         <h2>Conheça nosso time</h2>
         <TeamContainer>
           <MemberList>
@@ -111,13 +113,52 @@ export default function LandingPage() {
               com apoio da <strong>Mercado Bitcoin</strong>, em 2022.
             </p>
             <p>
-              Somos a <strong>1ª plataforma nocode</strong> a democratizar e facilitar a criação de
+              Somos a <strong>1ª plataforma nocode</strong> a democratizar e facilitar a criação de{" "}
               <strong>colecionáveis digitais (NFTs)</strong> no Instagram!
             </p>
             <small>🕸️👾🦄🖼️📑⛓️🧩🪙🎨🤳📊🧙⚒️</small>
           </TeamText>
         </TeamContainer>
       </TeamSection>
+      <FaqSection id="faq-section">
+        <h2>🤔 Perguntas frequentes</h2>
+        <hr className="titleBreak" />
+        <details>
+          <summary>Porque criar e compartilhar colecionáveis digitais no Instagram?</summary>
+          <p>
+            Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning
+            fireworks and seasonal special events.
+          </p>
+        </details>
+        <hr />
+        <details>
+          <summary>Quanto custa para usar a colecionável.digital?</summary>
+          <p>
+            Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning
+            fireworks and seasonal special events.
+          </p>
+        </details>
+        <hr />
+        <details>
+          <summary>Posso transferir meus colecionáveis digitais?</summary>
+          <p>
+            Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning
+            fireworks and seasonal special events.
+          </p>
+        </details>
+        <hr />
+        <details>
+          <summary>Posso ter colecionáveis digitais no Instagram sem precisar a plataforma?</summary>
+          <p>
+            Sim, claro! Você pode fazer o processo tradicional para ter seus primeiros NFTs. Você vai precisar criar uma conta em uma
+            corretora de criptomoedas, enviar seus documentos, depositar reais, trocar os reais pela criptomoeda da rede blockchain que você
+            deseja utilizar, transferir essas criptomoedas para sua carteira, e em seguida mintar sua coleção NFT em um marketplace como o
+            Opensea.
+          </p>
+        </details>
+        <hr />
+      </FaqSection>
+      <Footer />
     </>
   );
 }

@@ -10,8 +10,8 @@ export default function Header() {
       </HeaderImage>
       <HeaderNav>
         <a href="#">Sobre</a>
-        <a href="#">Como funciona</a>
-        <a href="#">Perguntas Frequentes</a>
+        <a href="#info-section">Como funciona</a>
+        <a href="#faq-section">Perguntas Frequentes</a>
       </HeaderNav>
       <HeaderBtn>
         <Button>Acessar App</Button>

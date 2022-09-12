@@ -77,6 +77,9 @@ export const BenefitsSection = styled.section`
 `;
 
 export const InfoSection = styled.section`
+  position: sticky;
+  top: 0;
+
   padding: 5rem 7rem;
   background-color: rgb(var(--primary-00));
   display: flex;
@@ -106,6 +109,7 @@ export const InfoText = styled.div`
 
 export const TeamSection = styled.section`
   position: sticky;
+  top: 0;
 
   display: flex;
   padding: 3rem 7rem;
@@ -187,5 +191,45 @@ export const TeamText = styled.div`
   small {
     align-self: flex-end;
     margin: auto 0;
+  }
+`;
+
+export const FaqSection = styled.section`
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 4rem 7rem;
+
+  background-color: rgb(var(--primary-00));
+
+  h2 {
+    background-color: black;
+    padding: 0.7rem;
+  }
+
+  hr {
+    background-color: black;
+    border: none;
+    height: 1px;
+    width: 50%;
+  }
+
+  .titleBreak {
+    width: 70%;
+  }
+
+  details {
+    width: 50%;
+    text-align: center;
+    color: black;
+  }
+
+  summary {
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 `;
