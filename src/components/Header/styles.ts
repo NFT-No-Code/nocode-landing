@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   position: fixed;
+  z-index: 2;
 
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 3.5rem;
   height: 4.5rem;
   width: 100%;
 
@@ -15,6 +16,7 @@ export const HeaderContainer = styled.header`
 export const HeaderImage = styled.figure`
   display: flex;
   width: 10.5rem;
+  margin: 0;
 
   img {
     width: 100%;
