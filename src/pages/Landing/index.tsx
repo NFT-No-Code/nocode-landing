@@ -1,5 +1,18 @@
 import Header from "../../components/Header";
-import { BenefitsSection, CopyContent, CopyImage, CopyText, InitialCopy } from "./styles";
+import {
+  BenefitsSection,
+  CopyContent,
+  CopyImage,
+  CopyText,
+  InfoSection,
+  InfoText,
+  InitialCopy,
+  MemberCard,
+  MemberList,
+  TeamContainer,
+  TeamSection,
+  TeamText,
+} from "./styles";
 import mediaImg from "../../assets/mediapost.jpg";
 import BenefitItem from "./components/BenefitItem";
 import BitcoinPane from "../../assets/bitcoin-pane.png";
@@ -50,6 +63,61 @@ export default function LandingPage() {
           imageAlt="Imagem de uma moça olhando para linhas de código com uma lupa."
         />
       </BenefitsSection>
+      <InfoSection>
+        <InfoText>
+          <h2>Como funciona?</h2>
+          <ul>
+            <li>
+              ☝️ Criar uma carteira <strong>Metamask</strong> para ter um endereço na <strong>Web3</strong>.
+            </li>
+            <li>
+              ✌️ Selecionar os <strong>colecionáveis digitais</strong> do seu computador ou celular.
+            </li>
+            <li>‍👌 Colar o seu endereço Web3 para receber os NFTs.</li>
+            <li>🤳 Compartilhar com sua comunidade no Instagram.</li>
+          </ul>
+        </InfoText>
+      </InfoSection>
+      <TeamSection>
+        <h2>Conheça nosso time</h2>
+        <TeamContainer>
+          <MemberList>
+            <MemberCard>
+              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
+              <p>Slim Shady</p>
+            </MemberCard>
+            <MemberCard>
+              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
+              <p>Slim Shady</p>
+            </MemberCard>
+            <MemberCard>
+              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
+              <p>Slim Shady</p>
+            </MemberCard>
+            <MemberCard>
+              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
+              <p>Slim Shady</p>
+            </MemberCard>
+            <MemberCard>
+              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
+              <p>Slim Shady</p>
+            </MemberCard>
+          </MemberList>
+          <TeamText>
+            <h4>Nossa história começou no</h4>
+            <h3>Curso de DeFi Lift Learning</h3>
+            <p>
+              promovido pelo Laboratório de Inovações Financeiras e Tecnológicas do Banco Central do Brasil e pela Universidade de Brasília
+              com apoio da <strong>Mercado Bitcoin</strong>, em 2022.
+            </p>
+            <p>
+              Somos a <strong>1ª plataforma nocode</strong> a democratizar e facilitar a criação de
+              <strong>colecionáveis digitais (NFTs)</strong> no Instagram!
+            </p>
+            <small>🕸️👾🦄🖼️📑⛓️🧩🪙🎨🤳📊🧙⚒️</small>
+          </TeamText>
+        </TeamContainer>
+      </TeamSection>
     </>
   );
 }

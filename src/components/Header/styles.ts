@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   position: fixed;
-  z-index: 2;
+  z-index: 10;
 
   display: flex;
   align-items: center;
   gap: 3.5rem;
   height: 4.5rem;
   width: 100%;
+  background-color: rgba(var(--secondary-00), 0.3);
 
   padding: 0 7rem;
 `;

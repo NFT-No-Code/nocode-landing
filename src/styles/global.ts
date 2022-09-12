@@ -13,8 +13,8 @@ export const GlobalStyle = createGlobalStyle`
   line-height: 24px;
   font-weight: 400;
 
-  color: rgba(var(--secondary-00), 0.87);
-  background-color: #111111;
+  color: rgba(var(--secondary-00));
+  background-color: rgb(var(--background-00));
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -41,5 +41,11 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+  }
 
 `;
