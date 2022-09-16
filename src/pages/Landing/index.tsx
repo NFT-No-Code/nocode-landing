@@ -8,18 +8,18 @@ import {
   InfoSection,
   InfoText,
   InitialCopy,
-  MemberCard,
-  MemberList,
   TeamContainer,
   TeamSection,
   TeamText,
 } from "./styles";
-import mediaImg from "../../assets/mediapost.jpg";
+import mediaImg from "../../assets/mediapost.png";
 import BenefitItem from "./components/BenefitItem";
 import BitcoinPane from "../../assets/bitcoin-pane.png";
 import SurprisePane from "../../assets/surprise-pane.png";
 import VerifyPane from "../../assets/verify-pane.png";
 import Footer from "./components/Footer";
+import TeamList from "./components/TeamList";
+import { TeamWords } from "./components/TeamWords";
 
 export default function LandingPage() {
   return (
@@ -83,28 +83,9 @@ export default function LandingPage() {
       <TeamSection id="team-section">
         <h2>Conheça nosso time</h2>
         <TeamContainer>
-          <MemberList>
-            <MemberCard>
-              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
-              <p>Slim Shady</p>
-            </MemberCard>
-            <MemberCard>
-              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
-              <p>Slim Shady</p>
-            </MemberCard>
-            <MemberCard>
-              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
-              <p>Slim Shady</p>
-            </MemberCard>
-            <MemberCard>
-              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
-              <p>Slim Shady</p>
-            </MemberCard>
-            <MemberCard>
-              <img src="https://i1.sndcdn.com/avatars-NCclWU8WvrKk0CmY-zLsYIQ-t240x240.jpg" alt="mudar" />
-              <p>Slim Shady</p>
-            </MemberCard>
-          </MemberList>
+          <div>
+            <TeamList />
+          </div>
           <TeamText>
             <h4>Nossa história começou no</h4>
             <h3>Curso de DeFi Lift Learning</h3>
@@ -116,8 +97,8 @@ export default function LandingPage() {
               Somos a <strong>1ª plataforma nocode</strong> a democratizar e facilitar a criação de{" "}
               <strong>colecionáveis digitais (NFTs)</strong> no Instagram!
             </p>
-            <small>🕸️👾🦄🖼️📑⛓️🧩🪙🎨🤳📊🧙⚒️</small>
           </TeamText>
+          <TeamWords />
         </TeamContainer>
       </TeamSection>
       <FaqSection id="faq-section">

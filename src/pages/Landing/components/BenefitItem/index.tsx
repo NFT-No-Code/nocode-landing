@@ -19,7 +19,12 @@ export default function BenefitItem({ title, desc, imagePath, imageAlt, isRevers
         </ItemTitle>
         <p>{desc}</p>
       </ItemDescription>
-      <ItemImage>
+      <ItemImage
+        initial={isReverse ? { opacity: 0, x: -100 } : { opacity: 0, x: 100 }}
+        whileInView={isReverse ? { opacity: 1, x: 0 } : { opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.4 }}
+      >
         <img src={imagePath} alt={imageAlt} />
       </ItemImage>
     </ItemWrapper>
