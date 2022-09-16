@@ -13,15 +13,9 @@ export default function Footer() {
       <SiteLinks>
         <LinkColumn>
           <p>Links</p>
-          <a href="#">Política de privacidade</a>
-        </LinkColumn>
-        <LinkColumn>
-          <p>Site</p>
-          <a href="#">Início</a>
-          <a href="#benefits-section">Vantagens</a>
-          <a href="#info-section">Como funciona</a>
-          <a href="#team-section">Time</a>
-          <a href="#faq-section">FAQ</a>
+          <a href="#" target="_blank">
+            Política de privacidade
+          </a>
         </LinkColumn>
       </SiteLinks>
       <ButtonWrapper>

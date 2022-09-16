@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface IBenefitItemStyleProps {
   isReverse?: boolean;
@@ -6,27 +7,37 @@ interface IBenefitItemStyleProps {
 
 export const ItemWrapper = styled.div<IBenefitItemStyleProps>`
   display: flex;
-  flex-direction: ${(props) => (props.isReverse ? "row-reverse" : "row")};
+  flex-direction: column;
+
+  @media screen and (min-width: 700px) {
+    flex-direction: ${(props) => (props.isReverse ? "row-reverse" : "row")};
+  }
 `;
 
 export const ItemDescription = styled.div<IBenefitItemStyleProps>`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  text-align: ${(props) => (props.isReverse ? "end" : "start")};
+  text-align: center;
 
-  width: 60%;
+  width: 100%;
 
   p {
     font-size: 1.1rem;
     font-weight: 300;
   }
+
+  @media screen and (min-width: 700px) {
+    width: 60%;
+    text-align: ${(props) => (props.isReverse ? "end" : "start")};
+  }
 `;
 
 export const ItemTitle = styled.div<IBenefitItemStyleProps>`
   display: flex;
-  flex-direction: ${(props) => (props.isReverse ? "row-reverse" : "row")};
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 
   p {
@@ -34,15 +45,33 @@ export const ItemTitle = styled.div<IBenefitItemStyleProps>`
     font-size: 1.2rem;
     font-weight: 500;
   }
+
+  @media screen and (min-width: 700px) {
+    justify-content: initial;
+    flex-direction: ${(props) => (props.isReverse ? "row-reverse" : "row")};
+  }
 `;
 
-export const ItemImage = styled.figure`
+export const ItemImage = styled(motion.figure)`
+  display: flex;
+  justify-content: center;
   margin: 0;
-  width: 40%;
+  width: 100%;
 
   img {
-    width: 100%;
-    height: 80%;
+    width: 50%;
+    height: 50%;
     object-fit: contain;
+  }
+
+  @media screen and (min-width: 700px) {
+    width: 40%;
+    justify-content: initial;
+
+    img {
+      width: 100%;
+      height: 80%;
+      object-fit: contain;
+    }
   }
 `;

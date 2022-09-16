@@ -2,6 +2,10 @@ import { createGlobalStyle } from "styled-components";
 import { DarkTheme } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    scroll-behavior:smooth
+  }
+  
   *{
     box-sizing: border-box;
     font-family: Poppins, Barlow, Inter, Avenir, Helvetica, Arial, sans-serif;
