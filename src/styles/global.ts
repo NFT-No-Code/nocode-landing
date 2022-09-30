@@ -48,9 +48,6 @@ export const GlobalStyle = createGlobalStyle`
     scrollbar-color: #e3e3e3 transparent;
   } 
 
-
-  
-
   a {
     font-weight: 400;
     color: rgb(var(--secondary-00), 0.5);

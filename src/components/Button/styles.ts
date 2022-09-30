@@ -26,4 +26,10 @@ export const StyledButton = styled.button`
   &:hover {
     transform: scale(105%);
   }
+
+  @media screen and (min-width: 1400px) {
+    font-weight: 500;
+    font-size: 1.1rem;
+    width: 8.5rem;
+  }
 `;

@@ -19,7 +19,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function Header() {
   const scrollPosition = useScrollPosition();
-  const [showDropdown, setShowDropdown] = useState<boolean>(window.innerWidth < 1012);
+  const [showDropdown, setShowDropdown] = useState<boolean>(window.innerWidth < 1100);
 
   const updateWidth = () => {
     if (window.innerWidth < 1100) {

@@ -16,6 +16,9 @@ export default function Footer() {
           <a href="#" target="_blank">
             Política de privacidade
           </a>
+          <a href="#" target="_blank">
+            Whitepaper
+          </a>
         </LinkColumn>
       </SiteLinks>
       <ButtonWrapper>

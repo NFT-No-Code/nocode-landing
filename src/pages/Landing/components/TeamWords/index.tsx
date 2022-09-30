@@ -19,8 +19,8 @@ export function TeamWords() {
 
   return (
     <StyledWordList>
-      {wordArray.map((word) => (
-        <StyledWordLi>{word}</StyledWordLi>
+      {wordArray.map((word, index) => (
+        <StyledWordLi key={index}>{word}</StyledWordLi>
       ))}
     </StyledWordList>
   );

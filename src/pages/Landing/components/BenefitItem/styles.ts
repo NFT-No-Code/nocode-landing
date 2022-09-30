@@ -31,6 +31,14 @@ export const ItemDescription = styled.div<IBenefitItemStyleProps>`
     width: 60%;
     text-align: ${(props) => (props.isReverse ? "end" : "start")};
   }
+
+  @media screen and (min-width: 1400px) {
+    p {
+      font-size: 1.35rem;
+      font-weight: 300;
+      line-height: 35px;
+    }
+  }
 `;
 
 export const ItemTitle = styled.div<IBenefitItemStyleProps>`
@@ -49,6 +57,13 @@ export const ItemTitle = styled.div<IBenefitItemStyleProps>`
   @media screen and (min-width: 700px) {
     justify-content: initial;
     flex-direction: ${(props) => (props.isReverse ? "row-reverse" : "row")};
+  }
+
+  @media screen and (min-width: 1400px) {
+    p {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
   }
 `;
 

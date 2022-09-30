@@ -4,6 +4,7 @@ import {
   CopyContent,
   CopyImage,
   CopyText,
+  CTAButton,
   FaqSection,
   InfoSection,
   InfoText,
@@ -44,7 +45,7 @@ export default function LandingPage() {
         </CopyContent>
       </InitialCopy>
       <BenefitsSection id="benefits-section">
-        <h2>Vantagens</h2>
+        <h2>Porque usar a colecionavel.digital 👇</h2>
         <BenefitItem
           title="Fácil e sem cripto"
           desc="Agora você não precisa mais saber de programação ou de criptomoedas para ter os seus primeiros NFTs. Nós fazemos a ponte!"
@@ -79,6 +80,7 @@ export default function LandingPage() {
             <li>🤳 Compartilhar com sua comunidade no Instagram.</li>
           </ul>
         </InfoText>
+        <CTAButton>🔥 COMEÇAR AGORA</CTAButton>
       </InfoSection>
       <TeamSection id="team-section">
         <h2>Conheça nosso time</h2>

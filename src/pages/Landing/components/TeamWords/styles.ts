@@ -25,4 +25,8 @@ export const StyledWordLi = styled.li`
   text-transform: uppercase;
 
   background-color: rgb(var(--secondary-00), 0.15);
+
+  @media screen and (min-width: 1400px) {
+    font-size: 0.85rem;
+  }
 `;

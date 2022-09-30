@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import backgroundImg from "../../assets/background.jpg";
 import nftUnderline from "../../assets/underline.png";
 import noisePattern from "../../assets/noise-pattern.jpg";
+import { StyledButton } from "../../components/Button/styles";
 
 export const InitialCopy = styled.section`
   display: flex;
@@ -89,6 +90,22 @@ export const CopyText = styled.div`
     width: 60%;
     text-align: start;
   }
+
+  @media screen and (min-width: 1400px) {
+    h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    .subtitleCopy {
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+
+    .textCopy {
+      font-size: 1.1rem;
+    }
+  }
 `;
 
 export const CopyImage = styled.div`
@@ -137,16 +154,36 @@ export const BenefitsSection = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 3.5rem;
+  text-align: center;
 
   padding: 10rem 2rem;
 
+  h2 {
+    margin-bottom: 2rem;
+  }
+
   @media screen and (min-width: 860px) {
     padding: 7rem 7rem;
-    gap: 2rem;
+    gap: 0rem;
+
+    h2 {
+      margin-bottom: 6rem;
+    }
+  }
+
+  @media screen and (min-width: 1100px) {
+    padding: 10rem 7rem;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 8rem 10rem;
+    padding: 10rem 10rem;
+  }
+
+  @media screen and (min-width: 1400px) {
+    h2 {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
   }
 `;
 
@@ -159,7 +196,7 @@ export const InfoSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 3.5rem;
 
   @media screen and (min-width: 860px) {
     padding: 5rem 7rem;
@@ -170,22 +207,53 @@ export const InfoSection = styled.section`
   }
 `;
 
+export const CTAButton = styled(StyledButton)`
+  width: fit-content;
+  height: fit-content;
+
+  padding: 1rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  background-color: rgb(var(--background-00));
+  color: rgb(var(--secondary-00));
+  border: 1px solid rgb(var(--secondary-00));
+
+  box-shadow: none;
+
+  &:hover {
+    background-color: rgb(var(--secondary-00));
+    color: rgb(var(--background-00));
+  }
+`;
+
 export const InfoText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 
   h2 {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   }
 
   ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
     text-align: center;
     list-style-type: none;
     padding: 0;
     margin: 0;
     color: black;
+  }
+
+  @media screen and (min-width: 1400px) {
+    li {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
   }
 `;
 
@@ -196,17 +264,17 @@ export const TeamSection = styled.section`
   padding: 3rem 2rem;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 3.5rem;
 
   background-image: url(${noisePattern});
   background-repeat: repeat;
 
   @media screen and (min-width: 860px) {
-    padding: 3rem 7rem;
+    padding: 3.5rem 7rem;
   }
 
   @media screen and (min-width: 1440px) {
-    padding: 3rem 10rem;
+    padding: 3.5rem 10rem;
   }
 `;
 
@@ -255,6 +323,28 @@ export const TeamText = styled.div`
     align-self: flex-end;
     margin: auto 0;
   }
+
+  @media screen and (min-width: 1400px) {
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    small {
+      align-self: flex-end;
+      margin: auto 0;
+    }
+  }
 `;
 
 export const FaqSection = styled.section`
@@ -291,6 +381,10 @@ export const FaqSection = styled.section`
     color: black;
   }
 
+  details p {
+    color: rgba(var(--background-00), 0.85);
+  }
+
   details summary {
     cursor: pointer;
     list-style-type: "↓   ";
@@ -306,7 +400,7 @@ export const FaqSection = styled.section`
     padding: 4rem 7rem;
     text-align: initial;
 
-    detail {
+    details {
       width: 50%;
     }
 
@@ -316,6 +410,18 @@ export const FaqSection = styled.section`
 
     hr {
       width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    details summary {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    details {
+      font-size: 1rem;
+      font-weight: 500;
     }
   }
 

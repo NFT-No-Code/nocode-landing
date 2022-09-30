@@ -35,6 +35,13 @@ export const MemberCard = styled(Popover.Button)`
   @media screen and (min-width: 860px) {
     width: 250px;
   }
+
+  @media screen and (min-width: 1400px) {
+    p {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const StyledPanel = styled(Popover.Panel)`

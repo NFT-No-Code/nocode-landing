@@ -56,4 +56,23 @@ export const teamMembersData: ITeamMember[] = [
     },
     id: "3",
   },
+  {
+    name: "Gabriel Figueira",
+    description:
+      "Profissional de Marketing para empresas tech do Brasil, Índia e Colômbia, formado em publicidade, análise e desenvolvimento de sistemas e pós graduado em gestão de negócios sustentáveis. Pesquisador de DeFi e WEB3 desde 2019.",
+    pfp: "https://i.imgur.com/4rugEMg.png",
+    social_media: {
+      linkedin: "https://www.linkedin.com/in/gfigueira/",
+    },
+    cover:
+      "https://media-exp1.licdn.com/dms/image/C4E16AQHPcFvRb76zrg/profile-displaybackgroundimage-shrink_350_1400/0/1521047695085?e=1668643200&v=beta&t=QDm49_AeFKvknYabeV0sYvu5MAUYj4gElQYihj-M7g8",
+    id: "4",
+  },
+  {
+    name: "Samuel Schramm Meurer",
+    description:
+      "Discente do curso de Engenharia de Controle e Automação na Universidade Federal de Santa Catarina, pós-MEJ, atualmente estudando negócios escaláveis e  desenvolvendo a startup Infinity que está inserida no universo de Web 3.0.",
+    pfp: "https://i.imgur.com/Iydut1Z.png",
+    id: "5",
+  },
 ];

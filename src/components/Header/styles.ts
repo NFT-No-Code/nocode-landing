@@ -44,6 +44,10 @@ export const HeaderImage = styled.figure`
     height: 100%;
     object-fit: fill;
   }
+
+  @media screen and (min-width: 1400px) {
+    width: 12rem;
+  }
 `;
 
 export const HeaderNav = styled.nav`
@@ -59,6 +63,13 @@ export const HeaderNav = styled.nav`
 
     &:hover {
       color: rgb(var(--secondary-00));
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    a {
+      font-weight: 500;
+      font-size: 1.1rem;
     }
   }
 `;
