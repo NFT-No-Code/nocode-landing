@@ -16,7 +16,7 @@ export default function Footer() {
           <a href="#" target="_blank">
             Política de privacidade
           </a>
-          <a href="#" target="_blank">
+          <a href="https://bit.ly/whitepaper-colecionavel" target="_blank">
             Whitepaper
           </a>
         </LinkColumn>
