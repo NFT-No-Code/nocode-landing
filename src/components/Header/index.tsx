@@ -6,6 +6,7 @@ import { IoMdClose } from "react-icons/io";
 import Logo from "../../assets/logo.svg";
 import Button from "../Button";
 import {
+  DropdownAppButton,
   DropdownItems,
   DropdownMenuClose,
   DropdownMenuContent,
@@ -75,7 +76,9 @@ export default function Header() {
                           <a href="#faq-section">Perguntas Frequentes</a>
                         </Menu.Item>
                         <Menu.Item>
-                          <button onClick={() => console.log("salve")}>Acessar App</button>
+                          <DropdownAppButton href="https://app.colecionavel.digital/" target="_blank" className="appRedirect">
+                            Acessar App
+                          </DropdownAppButton>
                         </Menu.Item>
                       </DropdownMenuContent>
                     </DropdownItems>
@@ -93,7 +96,9 @@ export default function Header() {
             <a href="#faq-section">Perguntas Frequentes</a>
           </HeaderNav>
           <HeaderBtn>
-            <Button>Acessar App</Button>
+            <a href="https://app.colecionavel.digital/" target="_blank">
+              Acessar App
+            </a>
           </HeaderBtn>
         </>
       )}

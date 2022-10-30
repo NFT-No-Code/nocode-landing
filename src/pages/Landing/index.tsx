@@ -80,7 +80,9 @@ export default function LandingPage() {
             <li>🤳 Compartilhar com sua comunidade no Instagram.</li>
           </ul>
         </InfoText>
-        <CTAButton>🔥 COMEÇAR AGORA</CTAButton>
+        <CTAButton as="a" href="https://app.colecionavel.digital/" target="_blank">
+          🔥 COMEÇAR AGORA
+        </CTAButton>
       </InfoSection>
       <TeamSection id="team-section">
         <h2>Conheça nosso time</h2>
