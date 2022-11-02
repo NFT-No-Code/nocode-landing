@@ -53,6 +53,10 @@ export const SiteInfo = styled.div`
   }
 `;
 
+export const SocialLinks = styled.div`
+  display: flex;
+`;
+
 export const SiteLinks = styled.div`
   display: flex;
   justify-content: flex-start;

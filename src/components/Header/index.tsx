@@ -4,7 +4,6 @@ import { Menu } from "@headlessui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import Logo from "../../assets/logo.svg";
-import Button from "../Button";
 import {
   DropdownAppButton,
   DropdownItems,
@@ -37,7 +36,7 @@ export default function Header() {
   }, []);
 
   return (
-    <HeaderContainer className={scrollPosition > 400 ? "showBackground" : ""}>
+    <HeaderContainer className={scrollPosition > 400 ? "showBackground" : "hideBackground"}>
       <HeaderImage>
         <img src={Logo} alt="Logo do colecionável.digital" />
       </HeaderImage>

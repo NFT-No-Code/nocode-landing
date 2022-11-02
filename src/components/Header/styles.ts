@@ -11,6 +11,7 @@ export const HeaderContainer = styled.header`
   gap: 1rem;
   height: 4.5rem;
   width: 100%;
+  max-width: 100%;
 
   padding: 0 2rem;
 
@@ -18,6 +19,10 @@ export const HeaderContainer = styled.header`
 
   &.showBackground {
     background-color: rgb(var(--primary-00));
+  }
+
+  &.hideBackground {
+    background-color: transparent;
   }
 
   @media screen and (min-width: 1100px) {
@@ -100,6 +105,7 @@ export const HeaderBtn = styled.div`
 
     &:hover {
       transform: scale(105%);
+      color: rgb(var(--secondary-01));
     }
 
     @media screen and (min-width: 1400px) {

@@ -156,6 +156,9 @@ export const BenefitsSection = styled.section`
   gap: 3.5rem;
   text-align: center;
 
+  max-width: 100%;
+  overflow: hidden;
+
   padding: 10rem 2rem;
 
   h2 {
@@ -343,6 +346,26 @@ export const TeamText = styled.div`
     small {
       align-self: flex-end;
       margin: auto 0;
+    }
+  }
+`;
+
+export const TeamDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+
+  a {
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    border: 2px solid rgb(var(--secondary-00));
+    color: rgb(var(--secondary-00));
+
+    &:hover {
+      background-color: rgb(var(--secondary-00));
+      color: rgb(var(--secondary-02));
     }
   }
 `;

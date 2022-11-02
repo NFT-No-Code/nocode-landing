@@ -23,7 +23,7 @@ export const teamMembersData: ITeamMember[] = [
     name: "Marcos Gaius",
     description:
       "Desenvolvedor Frontend. Entusiasta da Web3, trabalhando para ajudar o amanhã ser melhor que o hoje, assumindo a responsabilidade do Ser. We Are Gonna ₿uild It!",
-    pfp: "https://i.imgur.com/pihpN7o.png",
+    pfp: "https://i.imgur.com/TJODhGI.png",
     social_media: {
       linkedin: "https://www.linkedin.com/in/marcos-gaius/",
       github: "https://github.com/MarcosGaius",
@@ -35,7 +35,7 @@ export const teamMembersData: ITeamMember[] = [
     name: "Tiago Ferreira Cavazin",
     description:
       "Acadêmico de Administração, Empreendedor com participação em mais de 4 projetos, founder do token ERC20 FITCASH-FTH captando leads em 117 países, ganhador de 2º Prêmios nacionais no segmento de startups, ganhador do 'Selo Empreendedor' do Angel Club Investor, Mentor de startup e Consultor de WEB3.",
-    pfp: "https://i.imgur.com/fM0z3h5.png",
+    pfp: "https://i.imgur.com/MoyyzKG.png",
     social_media: {
       twitter: "https://twitter.com/tiagofcavazin",
       linkedin: "https://www.linkedin.com/in/tiagoferreiracavazin/",
@@ -49,7 +49,7 @@ export const teamMembersData: ITeamMember[] = [
     name: "Guilherme Henriques Monteiro",
     description:
       "Estudante de Ciência da Computação na Universidade Vila Velha, atualmente no 6° período e estudando Golang, JavaScript, Solidity e Web3.",
-    pfp: "https://i.imgur.com/yuprR7q.png",
+    pfp: "https://i.imgur.com/fgURMR3.png",
     social_media: {
       linkedin: "https://www.linkedin.com/in/guilherme-henriques-monteiro-11a2a2217/",
       github: "https://github.com/GuihermeHenriquesM",
@@ -60,7 +60,7 @@ export const teamMembersData: ITeamMember[] = [
     name: "Gabriel Figueira",
     description:
       "Profissional de Marketing para empresas tech do Brasil, Índia e Colômbia, formado em publicidade, análise e desenvolvimento de sistemas e pós graduado em gestão de negócios sustentáveis. Pesquisador de DeFi e WEB3 desde 2019.",
-    pfp: "https://i.imgur.com/4rugEMg.png",
+    pfp: "https://i.imgur.com/VEQ5u4i.png",
     social_media: {
       linkedin: "https://www.linkedin.com/in/gfigueira/",
     },
@@ -72,7 +72,7 @@ export const teamMembersData: ITeamMember[] = [
     name: "Samuel Schramm Meurer",
     description:
       "Discente do curso de Engenharia de Controle e Automação na Universidade Federal de Santa Catarina, pós-MEJ, atualmente estudando negócios escaláveis e  desenvolvendo a startup Infinity que está inserida no universo de Web 3.0.",
-    pfp: "https://i.imgur.com/Iydut1Z.png",
+    pfp: "https://i.imgur.com/yHscsiL.png",
     id: "5",
   },
 ];

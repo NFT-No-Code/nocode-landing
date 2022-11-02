@@ -10,6 +10,7 @@ import {
   InfoText,
   InitialCopy,
   TeamContainer,
+  TeamDetails,
   TeamSection,
   TeamText,
 } from "./styles";
@@ -21,6 +22,7 @@ import VerifyPane from "../../assets/verify-pane.png";
 import Footer from "./components/Footer";
 import TeamList from "./components/TeamList";
 import { TeamWords } from "./components/TeamWords";
+import Button from "../../components/Button";
 
 export default function LandingPage() {
   return (
@@ -102,7 +104,10 @@ export default function LandingPage() {
               <strong>colecionáveis digitais (NFTs)</strong> no Instagram!
             </p>
           </TeamText>
-          <TeamWords />
+          <TeamDetails>
+            <TeamWords />
+            <a href="mailto:gm@colecionavel.digital">Falar com o time</a>
+          </TeamDetails>
         </TeamContainer>
       </TeamSection>
       <FaqSection id="faq-section">
@@ -111,24 +116,25 @@ export default function LandingPage() {
         <details>
           <summary>Porque criar e compartilhar colecionáveis digitais no Instagram?</summary>
           <p>
-            Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning
-            fireworks and seasonal special events.
+            Os NFTs são itens únicos que comprovam que você detêm aquela arte, meme, certificado ou ingresso, por exemplo. Agora você tem a
+            possibilidade de compartilhar seus itens digitais com sua comunidade de seguidores, e administradores da sua página.
           </p>
         </details>
         <hr />
         <details>
           <summary>Quanto custa para usar a colecionável.digital?</summary>
           <p>
-            Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning
-            fireworks and seasonal special events.
+            Hoje você paga apenas a taxa de transação na blockchain, podendo fazê-la através de uma testnet da Ethereum, como é o caso da
+            Goerli. Em breve será possível fazer este pagamento via PIX, sem a necessidade de ter criptomoedas, previsto para fevereiro de
+            2023.
           </p>
         </details>
         <hr />
         <details>
           <summary>Posso transferir meus colecionáveis digitais?</summary>
           <p>
-            Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning
-            fireworks and seasonal special events.
+            Sim. Ao realizar a criação da coleção NFT, você será o proprietário daquele item, logo você tem toda a liberdade para transferir
+            para outra carteira sua ou uma carteira terceiro, como a dos seus seguidores do instagram.
           </p>
         </details>
         <hr />

@@ -62,6 +62,11 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     min-height: 100vh;
+
+    &.App {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
   h1 {

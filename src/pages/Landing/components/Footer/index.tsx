@@ -1,6 +1,6 @@
-import { ButtonWrapper, FooterSection, LinkColumn, SiteInfo, SiteLinks } from "./styles";
+import { ButtonWrapper, FooterSection, LinkColumn, SiteInfo, SiteLinks, SocialLinks } from "./styles";
 import Logo from "../../../../assets/logo.svg";
-import { AiFillInstagram, AiOutlineArrowUp } from "react-icons/ai";
+import { AiFillInstagram, AiOutlineArrowUp, AiFillYoutube, AiFillLinkedin } from "react-icons/ai";
 
 export default function Footer() {
   return (
@@ -8,7 +8,17 @@ export default function Footer() {
       <SiteInfo>
         <img src={Logo} alt="Logo do colecionável.digital" className="footerLogo" />
         <p>© 2022-2022 colecionavel.digital Todos os direitos reservados.</p>
-        <AiFillInstagram size={48} />
+        <SocialLinks>
+          <a href="https://www.instagram.com/colecionavel.digital/" target="_blank">
+            <AiFillInstagram size={48} />
+          </a>
+          <a href="https://linkedin.com/company/colecionaveldigital" target="_blank">
+            <AiFillLinkedin size={48} />
+          </a>
+          <a href="https://www.youtube.com/channel/colecionaveldigital" target="_blank">
+            <AiFillYoutube size={48} />
+          </a>
+        </SocialLinks>
       </SiteInfo>
       <SiteLinks>
         <LinkColumn>
