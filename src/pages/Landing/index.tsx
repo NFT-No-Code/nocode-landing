@@ -78,7 +78,7 @@ export default function LandingPage() {
             <li>
               ✌️ Selecionar os <strong>colecionáveis digitais</strong> do seu computador ou celular.
             </li>
-            <li>‍👌 Colar o seu endereço Web3 para receber os NFTs.</li>
+            <li>‍👌 Conclua a criação do seu NFT via PIX e nós fazemos a magia pra você!</li>
             <li>🤳 Compartilhar com sua comunidade no Instagram.</li>
           </ul>
         </InfoText>
