@@ -1,10 +1,11 @@
+import Image, { StaticImageData } from "next/image";
 import { MdVerified } from "react-icons/md";
 import { ItemDescription, ItemImage, ItemTitle, ItemWrapper } from "./styles";
 
 interface IBenefitItemProps {
   title: string;
   desc: string;
-  imagePath: string;
+  imagePath: StaticImageData | string;
   imageAlt: string;
   isReverse?: boolean;
 }
@@ -25,7 +26,7 @@ export default function BenefitItem({ title, desc, imagePath, imageAlt, isRevers
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.4 }}
       >
-        <img src={imagePath} alt={imageAlt} />
+        <Image src={imagePath} alt={imageAlt}/>
       </ItemImage>
     </ItemWrapper>
   );

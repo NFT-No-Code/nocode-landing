@@ -5,7 +5,7 @@ export const useScrollPosition = () => {
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.scrollY);
+        setScrollPosition(window.scrollY);
     };
 
     updatePosition();

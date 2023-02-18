@@ -87,7 +87,7 @@ export const HeaderBtn = styled.div`
     width: 8rem;
     height: 2.5rem;
 
-    font-family: "Barlow";
+    font-family: var(--font-barlow);
     font-weight: 500;
     font-size: 0.9rem;
 

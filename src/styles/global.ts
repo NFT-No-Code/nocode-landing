@@ -6,9 +6,9 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior:smooth
   }
   
-  *{
+  * {
     box-sizing: border-box;
-    font-family: Poppins, Barlow, Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-family: var(--font-poppins), var(--font-barlow), var(--font-inter), Avenir, Helvetica, Arial, sans-serif;
    
     &::-webkit-scrollbar-track {
       background-color: transparent;

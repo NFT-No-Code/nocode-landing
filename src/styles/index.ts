@@ -1,8 +1,8 @@
-import styled, { keyframes } from "styled-components";
-import backgroundImg from "../../assets/background.jpg";
-import nftUnderline from "../../assets/underline.png";
-import noisePattern from "../../assets/noise-pattern.jpg";
-import { StyledButton } from "../../components/Button/styles";
+import styled from "styled-components";
+import backgroundImg from "../assets/background.jpg";
+import nftUnderline from "../assets/underline.png";
+import noisePattern from "../assets/noise-pattern.jpg";
+import { StyledButton } from "../components/Button/styles";
 
 export const InitialCopy = styled.section`
   display: flex;
@@ -11,7 +11,7 @@ export const InitialCopy = styled.section`
   width: 100%;
   height: fit-content;
 
-  background-image: url(${backgroundImg});
+  background-image: url(${backgroundImg.src});
   background-size: cover;
 
   @media screen and (min-width: 700px) {
@@ -63,7 +63,7 @@ export const CopyText = styled.div`
 
   .underlineImage {
     display: inline-block;
-    background-image: url(${nftUnderline});
+    background-image: url(${nftUnderline.src});
     background-position: bottom;
     background-repeat: no-repeat;
     padding-bottom: 0.6rem;
@@ -269,7 +269,7 @@ export const TeamSection = styled.section`
   align-items: center;
   gap: 3.5rem;
 
-  background-image: url(${noisePattern});
+  background-image: url(${noisePattern.src});
   background-repeat: repeat;
 
   @media screen and (min-width: 860px) {
