@@ -97,6 +97,7 @@ export default function Header() {
                           <DropdownAppButton
                             href="https://app.colecionavel.digital/"
                             target="_blank"
+                            rel="noreferrer"
                             className="appRedirect"
                           >
                             Acessar App

@@ -2,10 +2,25 @@ import { ReactNode } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ITeamMember } from "../TeamList/data/members";
-import { MemberCard, MemberDesc, PanelContent, PanelCover, PanelMember, SocialMedia, StyledPanel } from "./styles";
+import {
+  MemberCard,
+  MemberDesc,
+  PanelContent,
+  PanelCover,
+  PanelMember,
+  SocialMedia,
+  StyledPanel,
+} from "./styles";
 import { BsLinkedin, BsInstagram, BsGithub, BsTwitter } from "react-icons/bs";
 
-export default function TeamMemberCard({ name, description, pfp, id, social_media, cover }: ITeamMember) {
+export default function TeamMemberCard({
+  name,
+  description,
+  pfp,
+  id,
+  social_media,
+  cover,
+}: ITeamMember) {
   interface ISocialMediaIconsKeys {
     [key: string]: ReactNode;
   }
@@ -55,7 +70,12 @@ export default function TeamMemberCard({ name, description, pfp, id, social_medi
                       {social_media &&
                         Object.keys(social_media).map((userMedia: string, index) => {
                           return (
-                            <a href={social_media[userMedia]} key={index} target="_blank">
+                            <a
+                              href={social_media[userMedia]}
+                              key={index}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
                               {socialMediaIcons[userMedia]}
                             </a>
                           );
