@@ -13,8 +13,8 @@ export default function HeadSEO({ title }: IHeadSEOProps) {
         content="colecionavel.digital - Acelerando projetos, engajando pessoas, criando comunidades e inovando através de soluções com colecionáveis digitais (NFTs ou Non Fungible Tokens)"
       />
 
-      <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta content="text/html; charset=utf-8" httpEquiv="Content-Type" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta
         name="viewport"
         content="width=device-width,height=device-height, initial-scale=1, shrink-to-fit=yes"
