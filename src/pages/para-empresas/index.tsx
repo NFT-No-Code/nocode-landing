@@ -4,7 +4,7 @@ import { Form } from "@unform/web";
 import { useRef } from "react";
 
 import HeadSEO from "@/components/HeadSEO";
-import * as S from "./styles";
+import * as S from "../../styles/para-empresas";
 
 import Logo from "../../assets/logo-white.svg";
 import Tetra1 from "../../assets/tetra_1.png";
