@@ -109,6 +109,7 @@ export default function BussinessPage() {
     }
   };
 
+  // arrumar metadados da página
   // submit com api
   // tracking
 
@@ -167,9 +168,7 @@ export default function BussinessPage() {
           <div className="blockDivision">
             <Image src={Block} alt="" />
           </div>
-          <section className="ourServices">
-            <ServicePanel />
-          </section>
+          <ServicePanel />
           <section className="workStepsSection">
             <div className="heading">
               <h2>Como trabalhamos?</h2>

@@ -2,19 +2,29 @@ import styled from "styled-components";
 import { StyledButton } from "../Button/styles";
 
 export const ServiceListWrapper = styled.ul`
-  all: unset;
+  height: 120vh;
+  max-width: 100vw;
 
-  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 
-  display: flex;
   box-shadow: inset 0px 0px 50px 50px rgb(var(--background-00));
 
+  display: flex;
+
+  overflow: hidden;
+
   li {
-    position: relative;
-    all: unset;
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 
     height: 100%;
     width: 100vw;
+    max-width: 100vw;
   }
 
   .slideText {

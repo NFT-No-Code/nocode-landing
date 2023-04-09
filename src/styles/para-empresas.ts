@@ -279,10 +279,6 @@ export const MainContainer = styled.div`
   }
 
   .ourServices {
-    min-width: 100vw;
-    height: 120vh;
-
-    overflow: hidden;
   }
 
   .cardSection {

@@ -9,12 +9,8 @@ export default function ServicePanel() {
   let intervalId: NodeJS.Timer;
 
   const [sliderRef, sliderInstance] = useKeenSlider({
-    range: {
-      align: true,
-    },
     slides: {
-      origin: "center",
-      perView: "auto",
+      perView: 1,
     },
     loop: true,
     created() {
