@@ -1,9 +1,17 @@
+import Link from "next/link";
 import Image from "next/image";
 import { useScrollPosition } from "@/hooks/hooks";
 import { Form } from "@unform/web";
 import { useRef } from "react";
+import { useKeenSlider } from "keen-slider/react";
+import * as Yup from "yup";
+import { contactFormSchema } from "schemas";
+import { FormHandles, SubmitHandler } from "@unform/core";
 
 import HeadSEO from "@/components/HeadSEO";
+import InfoCard from "@/components/InfoCard";
+import Input from "@/components/Input";
+import TextArea from "@/components/Textarea";
 import * as S from "../../styles/para-empresas";
 
 import Logo from "../../assets/logo-white.svg";
@@ -13,31 +21,95 @@ import Tetra3 from "../../assets/tetra_3.png";
 import Block from "../../assets/block.png";
 import Matrix3D from "../../assets/matrix.png";
 import ChatIcon from "../../assets/chat.svg";
+import BusinessPane from "../../assets/business.svg";
 
 import {
   HiOutlineUserCircle,
   HiOutlineMail,
   HiOutlinePhone,
   HiOutlineOfficeBuilding,
+  HiArrowRight,
+  HiArrowLeft,
 } from "react-icons/hi";
-
-import tempImage from "../../assets/bitcoin-pane.png";
-import InfoCard from "@/components/InfoCard";
-import Input from "@/components/Input";
-import TextArea from "@/components/Textarea";
-import Link from "next/link";
 import { AiFillInstagram, AiFillLinkedin, AiFillYoutube, AiOutlineArrowUp } from "react-icons/ai";
+import {
+  MdDocumentScanner,
+  MdGames,
+  MdGeneratingTokens,
+  MdOutlineDocumentScanner,
+  MdOutlineStorage,
+} from "react-icons/md";
+import { RiGalleryFill } from "react-icons/ri";
+import ServicePanel from "@/components/ServicePanel";
+import WorkSteps from "@/components/WorkSteps";
+
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  enterprise: string;
+  message: string;
+}
+
+interface IValidationError {
+  [key: string]: string;
+}
 
 export default function BussinessPage() {
   const scrollPosition = useScrollPosition();
-  const formRef = useRef(null);
+  const formRef = useRef<FormHandles>(null);
 
-  const handleSubmit = (data: any) => {
-    console.log(data);
+  const [sliderRef, sliderInstance] = useKeenSlider({
+    range: {
+      align: true,
+    },
+    slides: {
+      perView: "auto",
+      spacing: 16,
+    },
+  });
+
+  const [workSliderRef, workSliderInstance] = useKeenSlider({
+    range: {
+      align: false,
+    },
+    slides: {
+      perView: 1,
+    },
+    breakpoints: {
+      "(min-width: 768px)": {
+        slides: {
+          perView: 2,
+        },
+      },
+      "(min-width: 1024px)": {
+        slides: {
+          perView: 3,
+        },
+      },
+    },
+  });
+
+  const handleSubmit: SubmitHandler<FormData> = async (data) => {
+    try {
+      formRef.current!.setErrors({});
+
+      await contactFormSchema.validate(data, { abortEarly: false });
+      console.log(data);
+    } catch (err) {
+      const validationErrors = {} as IValidationError;
+      if (err instanceof Yup.ValidationError) {
+        err.inner.forEach((error) => {
+          if (error.path) {
+            validationErrors[error.path] = error.message;
+          }
+        });
+        formRef.current!.setErrors(validationErrors);
+      }
+    }
   };
 
-  // arrumar cards
-  // validação do form, com função de submit
+  // submit com api
   // tracking
 
   return (
@@ -63,11 +135,10 @@ export default function BussinessPage() {
         <S.MainContainer>
           <section className="mainCopy">
             <small>COLECIONAVEL.DIGITAL</small>
-            <h1>Soluções corporativas através de colecionáveis digitais (NFTs)</h1>
+            <h1>Consultoria e desenvolvimento de soluções corporativas na Web3</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit massa.
-              Vivamus porttitor risus eu quam ultrices finibus. Duis lectus eros, cursus nec tempus
-              id, dapibus nec mi.
+              Ajudamos empresas inovadoras a ingressar no mundo da Web3 e gerar resultados de
+              negócio através da tecnologia blockchain
             </p>
             <Image src={Matrix3D} alt="" />
           </section>
@@ -75,57 +146,88 @@ export default function BussinessPage() {
             <div>
               <h2>Seu negócio na Web3</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit massa.
-                Vivamus porttitor risus eu quam ultrices finibus. Duis lectus eros, cursus nec
-                tempus id, dapibus nec mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Nulla vitae elit massa. Vivamus porttitor risus eu quam ultrices finibus. Duis
-                lectus eros, cursus nec tempus id, dapibus nec mi.
+                Acreditamos no poder da tecnologia web3 para transformar a forma como conduzimos os
+                negócios. Somos apaixonados por trazer os benefícios do blockchain para a vanguarda
+                do economia digital e criando soluções inovadoras que atendam às necessidades de
+                nossos clientes.
               </p>
-              <S.EnterpriseButton>CONTATE-NOS</S.EnterpriseButton>
+              <p>
+                Nossa equipe de especialistas está empenhada em permanecer à frente, desenvolvendo
+                continuamente novas estratégias que aproveitam o que há de mais moderno em
+                tecnologia web3 para fornecer aos nossos clientes uma vantagem competitiva.
+              </p>
+              <S.EnterpriseButton as="a" href="#contact">
+                CONTATE-NOS
+              </S.EnterpriseButton>
             </div>
             <div>
-              <Image src={tempImage} alt="tempImage" />
+              <Image src={BusinessPane} alt="" />
             </div>
           </section>
           <div className="blockDivision">
             <Image src={Block} alt="" />
           </div>
+          <section className="ourServices">
+            <ServicePanel />
+          </section>
+          <section className="workStepsSection">
+            <div className="heading">
+              <h2>Como trabalhamos?</h2>
+              <div>
+                <button onClick={() => workSliderInstance.current?.prev()}>
+                  <HiArrowLeft />
+                </button>
+                <button onClick={() => workSliderInstance.current?.next()}>
+                  <HiArrowRight />
+                </button>
+              </div>
+            </div>
+            <WorkSteps workSliderRef={workSliderRef} />
+            <S.EnterpriseButton as="a" href="#contact">
+              CONTATE-NOS
+            </S.EnterpriseButton>
+          </section>
           <section className="cardSection">
             <div>
-              <h2>Algumas aplicações</h2>
+              <h2>Aplicações da tecnologia descentralizada</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, iusto voluptatem
-                architecto at modi harum, consequuntur eaque placeat consectetur alias sit neque ab
-                nobis eos, iure necessitatibus delectus nemo voluptatibus?
+                Integre a tecnologia Web3 em seu negócio e desbloqueie um novo mundo de
+                possibilidades. Com aplicações descentralizadas, contratos inteligentes e soluções
+                blockchain, você pode otimizar processos, aumentar a transparência e construir
+                confiança com seus clientes. Explore o potencial do Web3 e descubra como ele pode
+                revolucionar seu negócio.
               </p>
             </div>
-            <ul>
+            <ul ref={sliderRef} className="keen-slider">
               <InfoCard
-                title="Lorem Ipsum"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit massa.
-                Vivamus porttitor risus eu quam ultrices finibus. Duis lectus eros, cursus nec
-                tempus id, dapibus nec mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Nulla vitae elit massa. Vivamus porttitor risus eu quam ultrices finibus. Duis
-                lectus eros, cursus nec tempus id, dapibus nec mi."
-                icon={ChatIcon}
+                className="keen-slider__slide"
+                title="Tokenização"
+                content="Novas formas de captação de recursos, programas de recompensas ou até programas de fidelidade do cliente. Através da criação e gerência ativos digitais, como tokens ou criptomoedas."
+                icon={<MdGeneratingTokens />}
               />
               <InfoCard
-                title="Lorem Ipsum"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit massa.
-                Vivamus porttitor risus eu quam ultrices finibus. Duis lectus eros, cursus nec
-                tempus id, dapibus nec mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Nulla vitae elit massa. Vivamus porttitor risus eu quam ultrices finibus. Duis
-                lectus eros, cursus nec tempus id, dapibus nec mi."
-                icon={ChatIcon}
+                className="keen-slider__slide"
+                title="Colecionáveis Digitais"
+                content="Os colecionáveis digitais oferecem uma maneira nova e empolgante para as empresas interagirem com seus fãs e clientes. Ao criar itens únicos e colecionáveis, as empresas podem aumentar o engajamento e a lealdade."
+                icon={<RiGalleryFill />}
               />
               <InfoCard
-                title="Lorem Ipsum"
-                content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit massa.
-                Vivamus porttitor risus eu quam ultrices finibus. Duis lectus eros, cursus nec
-                tempus id, dapibus nec mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Nulla vitae elit massa. Vivamus porttitor risus eu quam ultrices finibus. Duis
-                lectus eros, cursus nec tempus id, dapibus nec mi."
-                icon={ChatIcon}
+                className="keen-slider__slide"
+                title="Contratos Inteligentes"
+                content="Contratos inteligentes são programas que funcionam em uma rede blockchain. Eles permitem que as empresas automatizem processos complexos, como transações financeiras e acordos legais, sem a necessidade de intermediários."
+                icon={<MdOutlineDocumentScanner />}
+              />
+              <InfoCard
+                className="keen-slider__slide"
+                title="Gamificação"
+                content="A gamificação é uma técnica de engajamento que usa elementos de jogos para tornar as experiências dos usuários mais envolventes e divertidas. A tecnologia web3 permite que as empresas criem jogos baseados em blockchain que oferecem recompensas em criptomoedas ou tokens."
+                icon={<MdGames />}
+              />
+              <InfoCard
+                className="keen-slider__slide"
+                title="Armazenamento"
+                content="Armazenamento de dados descentralizado é uma aplicação da tecnologia web3 que permite que os usuários armazenem e acessem dados de maneira segura e descentralizada, sem confiar em serviços centralizados."
+                icon={<MdOutlineStorage />}
               />
             </ul>
           </section>
@@ -133,9 +235,9 @@ export default function BussinessPage() {
             <div>
               <h2>Fale conosco!</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, iusto voluptatem
-                architecto at modi harum, consequuntur eaque placeat consectetur alias sit neque ab
-                nobis eos, iure necessitatibus delectus nemo voluptatibus?
+                Pronto para trazer o poder da Web3 para o seu negócio? Entre em contato conosco hoje
+                para discutir como podemos ajudá-lo a aproveitar o potencial da tecnologia
+                descentralizada e levar o seu negócio para o próximo nível.
               </p>
               <Form ref={formRef} onSubmit={handleSubmit}>
                 <Input
@@ -155,7 +257,7 @@ export default function BussinessPage() {
                 <Input
                   name="phone"
                   label="Telefone para contato"
-                  placeholder="(99) 99999-9999"
+                  placeholder="99999999999"
                   type="text"
                   icon={<HiOutlinePhone />}
                 />
@@ -189,7 +291,7 @@ export default function BussinessPage() {
             <nav>
               <a href="#">Início</a>
               <Link href="/" target="_blank">
-                Crie seu NFT
+                Página Inicial - Crie seu NFT
               </Link>
             </nav>
           </div>

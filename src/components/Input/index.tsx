@@ -13,7 +13,7 @@ interface IInputProps {
 
 export default function Input({ label, type, placeholder, name, icon, ...rest }: IInputProps) {
   const inputRef = useRef(null);
-  const { registerField, defaultValue, fieldName } = useField(name);
+  const { registerField, fieldName, error } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -33,10 +33,11 @@ export default function Input({ label, type, placeholder, name, icon, ...rest }:
   return (
     <S.InputWrapper>
       <label htmlFor={name}>{label}</label>
-      <div className="inputContainer">
+      <div className={`inputContainer ${error && "error"}`}>
         {icon}
         <input type={type} placeholder={placeholder} name={name} ref={inputRef} {...rest} />
       </div>
+      {error && <small className="errorMessage">{error}</small>}
     </S.InputWrapper>
   );
 }

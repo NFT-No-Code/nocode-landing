@@ -5,15 +5,14 @@ import { StaticImageData } from "next/image";
 interface IInfoCardProps {
   title: string;
   content: string;
-  icon: string | StaticImageData; //colocar imagem
+  icon: any;
+  className?: string;
 }
 
-export default function InfoCard({ content, icon, title }: IInfoCardProps) {
+export default function InfoCard({ content, icon, title, className }: IInfoCardProps) {
   return (
-    <S.CardWrapper>
-      <div className="iconContainer">
-        <Image src={icon} alt="ícone" />
-      </div>
+    <S.CardWrapper className={className}>
+      <div className="iconContainer">{icon}</div>
       <div className="textContainer">
         <h3>{title}</h3>
         <div className="mainText">

@@ -7,6 +7,7 @@ interface HeaderProps {
 
 export const HeaderEntreprises = styled.header<HeaderProps>`
   position: fixed;
+  z-index: 10;
 
   display: flex;
   justify-content: center;
@@ -31,9 +32,13 @@ export const HeaderContainer = styled.div`
   figure {
     display: flex;
 
-    width: 12rem;
+    width: 10rem;
 
     margin: 0;
+
+    @media screen and (min-width: 768px) {
+      width: 12rem;
+    }
 
     img {
       width: 100%;
@@ -128,6 +133,10 @@ export const MainContent = styled.main`
       right: 0;
     }
   }
+
+  h2 {
+    font-size: 1.8rem;
+  }
 `;
 
 export const MainContainer = styled.div`
@@ -176,6 +185,9 @@ export const MainContainer = styled.div`
     h1 {
       margin: 0.5rem;
       font-size: 2rem;
+
+      max-width: 100%;
+      overflow-wrap: break-word;
     }
 
     p {
@@ -199,30 +211,78 @@ export const MainContainer = styled.div`
   }
 
   .dividedSection {
+    display: flex;
+    flex-direction: column-reverse;
+
     width: 100%;
 
     margin-top: 6rem;
-    padding: 0 6rem;
+    padding: 0 2rem;
 
     display: flex;
+    gap: 2rem;
 
-    text-align: start;
+    text-align: center;
 
     div {
-      width: 50%;
+      width: 100%;
 
       img {
         width: 100%;
         height: auto;
       }
     }
+
+    div:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 100%;
+
+      @media screen and (min-width: 768px) {
+        align-items: initial;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-direction: initial;
+      text-align: start;
+
+      padding: 0 6rem;
+
+      div {
+        width: 50%;
+      }
+
+      div:first-child {
+        width: 50%;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      gap: 5rem;
+    }
   }
 
   .blockDivision {
+    padding: 2rem 0;
+
     img {
       width: 10rem;
       height: auto;
     }
+
+    @media screen and (min-width: 768px) {
+      padding: 5rem;
+    }
+  }
+
+  .ourServices {
+    min-width: 100vw;
+    height: 120vh;
+
+    overflow: hidden;
   }
 
   .cardSection {
@@ -231,14 +291,77 @@ export const MainContainer = styled.div`
     align-items: center;
     gap: 2.5rem;
 
-    padding: 7rem 1.5rem 0 1.5rem;
+    padding: 7rem 1rem 0 1rem;
+
+    max-width: 100%;
 
     ul {
       display: flex;
-      gap: 1rem;
+
+      max-width: 100%;
+      height: fit-content;
+
+      overflow-x: hidden;
 
       margin: 0;
       padding: 0;
+    }
+
+    @media screen and (min-width: 408px) {
+      padding: 7rem 1.5rem 0 1.5rem;
+    }
+  }
+
+  .workStepsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    margin-top: 6rem;
+    padding: 0 2rem;
+
+    max-width: 1300px;
+    width: 100%;
+
+    overflow: hidden;
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+
+      margin-bottom: 1rem;
+
+      text-align: start;
+
+      @media screen and (min-width: 500px) {
+        margin-bottom: 4rem;
+
+        flex-direction: initial;
+      }
+
+      div {
+        display: flex;
+        gap: 0.8rem;
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: none;
+        background: none;
+
+        cursor: pointer;
+
+        svg {
+          color: #fff;
+          width: 1.2rem;
+          height: auto;
+        }
+      }
     }
   }
 
@@ -248,7 +371,11 @@ export const MainContainer = styled.div`
     align-items: center;
     gap: 2.5rem;
 
-    padding: 7rem 1.5rem 0 1.5rem;
+    padding: 7rem 1rem 0 1rem;
+
+    @media screen and (min-width: 408px) {
+      padding: 7rem 1.5rem 0 1.5rem;
+    }
 
     form {
       display: flex;
@@ -256,9 +383,13 @@ export const MainContainer = styled.div`
       align-items: center;
       gap: 1rem;
 
-      width: 75%;
+      width: 100%;
 
       margin: 3rem auto;
+
+      @media screen and (min-width: 768px) {
+        width: 75%;
+      }
     }
 
     button {
@@ -285,7 +416,11 @@ export const FooterContent = styled.div`
   flex-direction: column;
   gap: 4rem;
 
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
+
+  @media screen and (min-width: 408px) {
+    padding: 1rem 2rem;
+  }
 
   figure {
     display: flex;
@@ -310,7 +445,7 @@ export const FooterContent = styled.div`
     align-items: center;
     justify-content: center;
 
-    padding: 0.4rem;
+    padding: 0.2rem;
 
     background: rgb(252, 163, 17);
     color: rgb(0, 0, 0);
@@ -318,6 +453,19 @@ export const FooterContent = styled.div`
     &:hover {
       color: rgb(252, 163, 17);
       background: rgb(0, 0, 0);
+    }
+
+    svg {
+      width: 1.5rem;
+      height: auto;
+    }
+
+    @media screen and (min-width: 408px) {
+      padding: 0.4rem;
+
+      svg {
+        width: initial;
+      }
     }
   }
 

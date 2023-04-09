@@ -10,7 +10,7 @@ interface ITextAreaProps {
 
 export default function TextArea({ label, placeholder, name, ...rest }: ITextAreaProps) {
   const textareaRef = useRef(null);
-  const { registerField, defaultValue, fieldName } = useField(name);
+  const { registerField, error, fieldName } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -30,7 +30,15 @@ export default function TextArea({ label, placeholder, name, ...rest }: ITextAre
   return (
     <S.TextAreaWrapper>
       <label htmlFor={name}>{label}</label>
-      <textarea placeholder={placeholder} name={name} ref={textareaRef} rows={6} {...rest} />
+      <textarea
+        placeholder={placeholder}
+        name={name}
+        ref={textareaRef}
+        rows={6}
+        {...rest}
+        className={error && "error"}
+      />
+      {error && <small className="errorMessage">{error}</small>}
     </S.TextAreaWrapper>
   );
 }

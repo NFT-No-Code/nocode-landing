@@ -4,13 +4,19 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
 
   width: 100%;
 
   label {
     font-family: var(--font-barlow);
     font-weight: 400;
+
+    margin-bottom: 0.5rem;
+  }
+
+  .errorMessage {
+    font-size: 0.8rem;
+    color: rgba(250, 0, 0, 1);
   }
 
   .inputContainer {
@@ -22,6 +28,8 @@ export const InputWrapper = styled.div`
     width: 100%;
 
     background: transparent;
+
+    margin-bottom: 0.2rem;
 
     svg {
       position: absolute;
@@ -44,6 +52,16 @@ export const InputWrapper = styled.div`
 
       padding: 0.8rem;
       padding-left: 2.4rem;
+    }
+  }
+
+  .error {
+    input {
+      border: 1px solid rgb(185, 0, 0);
+    }
+
+    svg {
+      color: rgb(185, 0, 0);
     }
   }
 `;
